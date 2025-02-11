@@ -6,25 +6,26 @@ import static org.junit.Assert.*;
 import com.exmple.StringCalculator;
 
 public class StringCalculatorTest {
+    private final StringCalculator calculator = new StringCalculator();
 
     @Test
     public void testEmptyString() {
-        StringCalculator calculator = new StringCalculator();
         assertEquals(0, calculator.Add(""));
     }
     @Test
     public void testSingleNumber() {
-        StringCalculator calculator = new StringCalculator();
         assertEquals(1, calculator.Add("1"));
     }
     @Test
     public void testTwoNumbers() {
-        StringCalculator calculator = new StringCalculator();
         assertEquals(3, calculator.Add("1,2"));
     }
     @Test
     public void testMultipleNumbers() {
-        StringCalculator calculator = new StringCalculator();
         assertEquals(6, calculator.Add("1,2,3"));
+    }
+    @Test
+    public void testNewlineAsDelimiter() {
+        assertEquals(6, calculator.Add("1\n2,3"));
     }
 }
