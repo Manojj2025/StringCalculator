@@ -37,4 +37,10 @@ public class StringCalculatorTest {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> calculator.Add("1,-2,3,-4"));
         assertEquals("Negatives not allowed: [-2, -4]", exception.getMessage());
     }
+      @Test
+    public void testIgnoreNumbersAbove1000() {
+        assertEquals(2, calculator.Add("2,1001"));
+    }
+
+    
 }
