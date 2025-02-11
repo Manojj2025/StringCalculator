@@ -50,4 +50,8 @@ public class StringCalculatorTest {
     public void testMultipleDelimiters() {
         assertEquals(6, calculator.Add("//[*][%]\n1*2%3"));
     }
+     @Test
+    public void testMultipleLongDelimiters() {
+        assertEquals(6, calculator.Add("//[***][%%%]\n1***2%%%3"));
+    }
 }
