@@ -42,5 +42,8 @@ public class StringCalculatorTest {
         assertEquals(2, calculator.Add("2,1001"));
     }
 
-    
+    @Test
+    public void testLongDelimiter() {
+        assertEquals(6, calculator.Add("//[***]\n1***2***3"));
+    }
 }
