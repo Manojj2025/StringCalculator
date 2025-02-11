@@ -32,4 +32,9 @@ public class StringCalculatorTest {
     public void testCustomDelimiter() {
         assertEquals(3, calculator.Add("//;\n1;2"));
     }
+    @Test
+    public void testNegativeNumbers() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> calculator.Add("1,-2,3,-4"));
+        assertEquals("Negatives not allowed: [-2, -4]", exception.getMessage());
+    }
 }
